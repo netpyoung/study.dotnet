@@ -1,0 +1,13 @@
+[book]
+title = "study.dotnet"
+description = "study.dotnet"
+language = "kr"
+multilingual = false
+src = "src"
+
+[output.html]
+no-section-label = true
+site-url = "/study.dotnet/"
+git-repository-url = "https://github.com/netpyoung/study.dotnet"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/netpyoung/study.dotnet/edit/main/{path}"
