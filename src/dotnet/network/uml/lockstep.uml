@@ -1,0 +1,49 @@
+@startuml
+
+class GameManager
+
+class LockStepManager {
+  + Init
+
+  + Start
+  + Stop
+
+  + Simulate      | fixed update
+  + Visualize     | update
+  + LateVisualize | late update
+  + Pause         | disable
+
+  Execute (Command com)
+}
+
+class Frame {
+  + Commands
+}
+
+
+class Command {
+  ControllerID
+  InputCode
+  Datas
+}
+note left : [ControllerID, InputCode, ContainedTypesCount, [[data_id, command_data_count, [command_Data, ]], ]]
+
+interface ICommandData {
+  void Write(Lockstep.Writer writer);
+  void Read (Reader reader);
+}
+note left: readable/writable for command
+
+
+class FrameManager {
+  Frames
+}
+
+class ClientManager
+
+GameManager -- LockStepManager
+FrameManager -- Frame
+Frame -- Command
+
+
+@enduml
