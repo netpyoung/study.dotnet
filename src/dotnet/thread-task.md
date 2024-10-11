@@ -355,6 +355,13 @@ Forget()
 
 
 
+## TLS
+
+[ThreadStatic] 
+ThreadLocal<T>
+AsyncLocal<T>
+ExecutionContext.SuppressFlow()
+
 
 
 ## Ref

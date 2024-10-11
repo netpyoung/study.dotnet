@@ -1,23 +1,37 @@
+# Coding Standard
 
+``` sh
 $ git reset --hard
 $ git rm --cached -r .
 $ git add --renormalize .
-
+```
 
 
 
 visual studio Ctrl + K + D 
-https://github.com/editorconfig/
-https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
-https://github.com/dotnet/roslyn/blob/main/.editorconfig
-https://github.com/dotnet/format
-https://github.com/alirezanet/husky.net
-https://github.com/versionize/versionize
-https://www.conventionalcommits.org/en/v1.0.0/
+- <https://github.com/editorconfig/>
+- <https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options>
+- <https://github.com/dotnet/roslyn/blob/main/.editorconfig>
+- <https://github.com/versionize/versionize>
+- <https://www.conventionalcommits.org/en/v1.0.0/>
 
-https://semver.org/
+
+## dotnet format
+
+- <https://github.com/dotnet/format>
+
+https://www.omnisharp.net/
+
+"omnisharp.enableRoslynAnalyzers": true,
+"omnisharp.enableEditorConfigSupport": true
+
+## x
+
+- <https://semver.org/>
+
 1.0.0-dev+1
-```
+
+``` txt
 {major}.{minor}.{patch}-{stage}+{buildnumber}
 ```
 

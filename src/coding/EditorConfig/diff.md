@@ -1,13 +1,13 @@
 ``` cs
-public enum E_STATE // kind of const
+public enum E_STATE
 {
    NONE = 0,
-   WALKING,
-   RUNNING,
+   A,
+   B,
 }
 
 [SerializeField]
-GameObject _prefab; // private member is special
+GameObject _prefab
 
 #region Unity callbacks
 #endregion // Unity callbacks

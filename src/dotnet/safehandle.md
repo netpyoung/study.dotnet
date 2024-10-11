@@ -1,12 +1,9 @@
 # SafeHandle
 
-https://sites.google.com/site/gsfzero1/
+- <https://sites.google.com/site/gsfzero1/>
+- <https://blogs.msdn.microsoft.com/bclteam/2005/03/15/safehandles-the-best-v2-0-feature-of-the-net-framework-ravi-krishnaswamy/>
+- [C#에서 C++ DLL 사용하기](https://libsora.so/posts/csharp-cpp-dll/)
 
-
-https://blogs.msdn.microsoft.com/bclteam/2005/03/15/safehandles-the-best-v2-0-feature-of-the-net-framework-ravi-krishnaswamy/
-
-C#에서 C++ DLL 사용하기
-https://libsora.so/posts/csharp-cpp-dll/
 
 
 Managed Resource
@@ -32,7 +29,7 @@ msdn.microsoft.com/en-us/magazine/bb985010.aspx
 
 SafeHandleZeroOrMinusOneIsInvalid
 
-
+``` cs
 [SuppressUnmanagedCodeSecurity]
   internal static class MyNativeMethods {
      [DllImport(“myNativeDll”, SetLastError=true), ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
@@ -43,12 +40,22 @@ SafeHandleZeroOrMinusOneIsInvalid
 
   }
 
+```
 
 ## pinvoke
+
 Platform Invocation Services (PInvoke) allows managed code to call unmanaged functions that are implemented in a DLL.
 [Platform Invoke Tutorial](https://msdn.microsoft.com/en-us/library/aa288468(v=vs.71).aspx)
 
+- <https://blogs.msdn.microsoft.com/bclteam/2006/06/23/how-to-use-safehandle-in-a-resilient-library-brian-grunkemeyer/>
 
 
+## Marshal
 
-https://blogs.msdn.microsoft.com/bclteam/2006/06/23/how-to-use-safehandle-in-a-resilient-library-brian-grunkemeyer/
+|                        |     |
+| ---------------------- | --- |
+| Marshal.AllocHGlobal   |     |
+| Marshal.AllocCoTaskMem |     |
+| Marshal.FreeHGlobal    |     |
+
+- [C# - 고성능이 필요한 환경에서 GC가 발생하지 않는 네이티브 힙 사용](https://www.sysnet.pe.kr/2/0/12036)
