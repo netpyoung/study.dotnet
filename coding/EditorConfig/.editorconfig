@@ -66,7 +66,7 @@ dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:error   
 dotnet_style_parentheses_in_other_operators = always_for_clarity:error             # IDE0047, IDE0048 | 괄호
 dotnet_style_require_accessibility_modifiers = always:error                        # IDE0040 | 접근자 켜기.
 dotnet_style_coalesce_expression = false:error                                     # IDE0029 | 연산자: `??`
-dotnet_style_null_propagation = false:error                                        # IDE0031 | 연산자: `?.` 
+dotnet_style_null_propagation = false:error                                        # IDE0031 | 연산자: `?.`
 dotnet_style_prefer_conditional_expression_over_assignment = false:error           # IDE0045 | 연산자: 삼항연산자 `? :` - 할당시
 dotnet_style_prefer_conditional_expression_over_return = false:error               # IDE0046 | 연산자: 삼항연산자 `? :` - 리턴시
 dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion # IDE0041 | null 검사용: if (value is null) - 비교
@@ -76,7 +76,7 @@ dotnet_style_collection_initializer = true:error                                
 dotnet_style_explicit_tuple_names = true:error                                     # IDE0033 | 튜플: var name = tuple.name; // var name = tuple.Item1;
 dotnet_style_prefer_inferred_tuple_names = true:error                              # IDE0037 | 튜플: 생성시 이름
 dotnet_style_prefer_inferred_anonymous_type_member_names = true:error              # IDE0037 | 익명타입: 생성시 이름
-dotnet_style_prefer_auto_properties = true:error                                   # IDE0032 | 선호: auto 프로퍼티 
+dotnet_style_prefer_auto_properties = true:error                                   # IDE0032 | 선호: auto 프로퍼티
 dotnet_style_prefer_compound_assignment = true:error                               # IDE0054 | 선호: `+=`
 dotnet_style_prefer_simplified_interpolation = true:error                          # IDE0071 | 선호: string interpolation에서 .ToString 생략
 dotnet_style_prefer_simplified_boolean_expressions = true:error                    # IDE0075 | 선호: `&&`와 같이 불린 반환 표현식 간략화
@@ -107,7 +107,7 @@ csharp_style_prefer_not_pattern = true:error                             # IDE00
 csharp_style_inlined_variable_declaration = true:error                   # IDE0018 | 인라인 : out 변수 구문
 csharp_style_deconstructed_variable_declaration = true:error             # IDE0042 | 튜플: var (name, age) = GetPersonTuple();
 csharp_style_pattern_local_over_anonymous_function = true:error          # IDE0039 | 선호: 익명함수보다 로컬함수 선호
-csharp_style_prefer_index_operator = true:error                          # IDE0057 | 선호: 인덱스 
+csharp_style_prefer_index_operator = true:error                          # IDE0057 | 선호: 인덱스
 csharp_style_prefer_range_operator = true:error                          # IDE0057 | 선호: 범위
 csharp_style_implicit_object_creation_when_type_is_apparent = true:error # IDE0090 | 선호: new Type()에서 type명 생략
 csharp_style_throw_expression = true:error                               # IDE0016 | 간소화된 throw구문. this.s = s ?? throw new ArgumentNullException(nameof(s));
@@ -348,7 +348,7 @@ dotnet_naming_style.xx_style_privatemember.capitalization       = pascal_case
 # --------------------------------------------------------------------------------------------------------------------
 # dotnet_diagnostic
 # RCS    | Roslynator.Analyzers
-# VSTHRD | Microsoft.VisualStudio.Threading.Analyzers 
+# VSTHRD | Microsoft.VisualStudio.Threading.Analyzers
 [*.{cs,csx,razor}]
 dotnet_analyzer_diagnostic.severity = error    # 코드분석기 결과 처리.
 
