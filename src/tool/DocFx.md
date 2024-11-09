@@ -1,14 +1,9 @@
+# DocFX
 
-- https://github.com/dotnet/docfx
-  - https://dotnet.github.io/docfx/index.html
-  - https://dotnet.github.io/docfx/docs/markdown.html
+- <https://github.com/dotnet/docfx>
+  - <https://dotnet.github.io/docfx/index.html>
+  - <https://dotnet.github.io/docfx/docs/markdown.html>
 
-- docfx
-  - https://github.com/Cysharp/UniTask/blob/master/docs/docfx.json
-
-
-docfx
-https://github.com/ScottPlot/ScottPlot/tree/main/dev/docfx
 
 
 ``` sh
@@ -45,10 +40,12 @@ docfx docs/docfx.json --serve
   ],
 ```
 
-docs/.gitignore
-    .cache
-    /**/_site/
+``` .gitignore
+// docs/.gitignore
 
+.cache
+/**/_site/
+```
 
 - com.unity.package-manager-doctools
   - https://docs.unity3d.com/Packages/com.unity.package-manager-doctools@3.3/manual/index.html

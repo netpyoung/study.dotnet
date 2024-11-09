@@ -6,6 +6,14 @@
   - C# 혹은 추가 파일에 접근 가능
 
 https://sharplab.io/ - syntax tree 확인가능
+https://roslynquoter.azurewebsites.net/
+https://github.com/KirillOsenkov/RoslynQuoter
+
+
+
+- StringSyntaxAttribute 
+  - https://learn.microsoft.com/ko-kr/dotnet/api/system.diagnostics.codeanalysis.stringsyntaxattribute?view=net-8.0
+  - https://www.alwaysdeveloping.net/dailydrop/2022/03/28-stringsyntaxattribute/
 
 https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md
 https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.cookbook.md
@@ -379,3 +387,17 @@ context.ReportDiagnostic(Diagnostic.Create(DiagnosticDescriptors.ExistsOverrideT
 ## Ref
 
 - [NDC2021 C# 정의를 사용하는 서버, 클라 코드 생성기 개발 이야기](http://ndcreplay.nexon.com/NDC2021/sessions/NDC2021_0017.html)
+
+
+## Unity
+
+        // Directory.GetCurrentDirectory()
+        // C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ServiceHub\Hosts\ServiceHub.Host.dotnet.x64
+        // Assembly.GetExecutingAssembly().Location
+        // C:\Users\pyoung\AppData\Local\Temp\VS\AnalyzerAssemblyLoader\ec742758ba054280988a834b5922cfa8\3c429374-7798-4357-94e0-1ee286c7b4f6\NF.UnityTools.Essentials.Generator.dll
+        // Assembly.GetAssembly(typeof(int)).Location
+        // C:\Program Files\Microsoft Visual Studio\2022\Community\dotnet\net8.0\runtime\shared\Microsoft.NETCore.App\8.0.10\System.Private.CoreLib.dll
+        // Process.GetCurrentProcess().MainModule.FileName
+        // C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ServiceHub\Hosts\ServiceHub.Host.dotnet.x64\ServiceHub.RoslynCodeAnalysisService.exe
+        // Environment.CurrentDirectory
+        // C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\ServiceHub\Hosts\ServiceHub.Host.dotnet.x64

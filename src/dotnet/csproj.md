@@ -11,3 +11,13 @@
 | `$(MSBuildProjectName)`      | 현재 MSBuild 프로젝트의 이름                                  |
 | `$(MSBuildProjectDirectory)` | 현재 MSBuild 프로젝트의 디렉토리 경로                         |
 | `$(NuGetPackageRoot)`        | NuGet 패키지가 저장되는 루트 경로                             |
+
+
+
+https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#runworkingdirectory
+
+
+<PropertyGroup>
+  <RunArguments>-mode dryrun</RunArguments>
+  <RunWorkingDirectory>c:\temp</RunWorkingDirectory>
+</PropertyGroup>
