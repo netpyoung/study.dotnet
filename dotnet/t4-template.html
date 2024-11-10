@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>버전 - study.dotnet</title>
+        <title>T4 Template - study.dotnet</title>
 
 
         <!-- Custom HTML head -->
@@ -129,7 +129,7 @@
                         <a href="https://github.com/netpyoung/study.dotnet" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/netpyoung/study.dotnet/edit/main/src/etc/version.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/netpyoung/study.dotnet/edit/main/src/dotnet/t4-template.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -158,40 +158,114 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="version"><a class="header" href="#version">Version</a></h1>
-<p>https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history</p>
+                        <p>.tt</p>
 <ul>
 <li>
-<p><a href="https://netpyoung.github.io/csharp-features/docs/">https://netpyoung.github.io/csharp-features/docs/</a></p>
+<p>TextTransform .exe</p>
+<ul>
+<li>https://learn.microsoft.com/ko-kr/visualstudio/modeling/generating-files-with-the-texttransform-utility?view=vs-2022</li>
+<li>\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE</li>
+<li>\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE</li>
+<li>\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE</li>
+</ul>
 </li>
 <li>
-<p><a href="https://stackoverflow.com/questions/247621/what-are-the-correct-version-numbers-for-c">https://stackoverflow.com/questions/247621/what-are-the-correct-version-numbers-for-c</a></p>
-</li>
-<li>
-<p><a href="https://www.c-sharpcorner.com/article/c-sharp-versions/">https://www.c-sharpcorner.com/article/c-sharp-versions/</a></p>
+<p>T4 <code>T</code>ext <code>T</code>emplate <code>T</code>ransformation <code>T</code>oolkit</p>
 </li>
 </ul>
-<h2 id="90"><a class="header" href="#90">9.0</a></h2>
-<h3 id="top-level-statement"><a class="header" href="#top-level-statement">top level statement</a></h3>
+<p>https://learn.microsoft.com/ko-kr/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2022</p>
+<p>package System.CodeDom</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Custom Tool</th><th></th></tr></thead><tbody>
+<tr><td>Runtime Text Tempalte</td><td>TextTemplatingFilePreprocessor</td><td>C#에서 템플릿 파일명을 클래스명으로 접근 가능</td></tr>
+<tr><td>Text Template</td><td>TextTemplatingFileGenerator</td><td></td></tr>
+</tbody></table>
+</div>
+<p><a href="https://www.sysnet.pe.kr/2/0/1619">T4를 이용한 INotifyPropertyChanged 코드 자동 생성</a></p>
+<p>Liquid
+https://shopify.github.io/liquid/
+https://github.com/lekman/AzureLiquid</p>
+<pre><code class="language-xml">&lt;!-- 
+Ref: https://learn.microsoft.com/en-us/visualstudio/msbuild/item-element-msbuild?view=vs-2022#attributes
+
+--&gt;
+
+  &lt;ItemGroup&gt;
+  
+    &lt;None Update="TextTemplate1.tt"&gt;
+      &lt;Generator&gt;TextTemplatingFileGenerator&lt;/Generator&gt;
+      &lt;LastGenOutput&gt;TextTemplate1.txt&lt;/LastGenOutput&gt;
+    &lt;/None&gt;
+    &lt;None Update="TextTemplate1.txt"&gt;
+      &lt;DesignTime&gt;True&lt;/DesignTime&gt;
+      &lt;AutoGen&gt;True&lt;/AutoGen&gt;
+      &lt;DependentUpon&gt;TextTemplate1.tt&lt;/DependentUpon&gt;
+    &lt;/None&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" /&gt;
+  &lt;/ItemGroup&gt;
+</code></pre>
+  <ItemGroup>
+    <None Update="RuntimeTextTemplate1.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RuntimeTextTemplate1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+<!--
+Ref:
+https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/bb932394(v=vs.100)
+
+[GuidAttribute("508349B6-6B84-4df5-91F0-309BEEBAD82D")]
+[ComVisibleAttribute(true)]
+[CLSCompliantAttribute(true)]
+public interface STextTemplating
+-->
+<blockquote>
+</blockquote>
+<pre><code>&lt;Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" /&gt;
+</code></pre>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="RuntimeTextTemplate1.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+## 디버깅
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates">https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates</a>
-<ul>
-<li><code>--use-program-main</code></li>
-<li><code>&lt;PropertyGroup&gt; &lt;ImplicitUsings&gt;disable&lt;/ImplicitUsings&gt; &lt;/PropertyGroup&gt;</code></li>
-<li><code>&lt;ItemGroup&gt; &lt;Using Remove="System.Net.Http" /&gt; &lt;/ItemGroup&gt;</code></li>
+<li>Solution Explorer &gt; .tt &gt; 우클릭 &gt; Debug T4 Template</li>
+<li>혹은</li>
 </ul>
-</li>
-</ul>
+<pre><code class="language-xml">&lt;#@ template debug="true" hostSpecific="true" #&gt;
+&lt;#@ import namespace="System.Diagnostics" #&gt;
+&lt;# Debugger.Launch(); #&gt;
+</code></pre>
+<p>DBCSCodePageEncoding은 Double Byte Character Set (DBCS) 코드 페이지 인코딩을</p>
+<p>&lt;#@ DirectiveName [AttributeName = "AttributeValue"] ... #&gt;
+&lt;# Standard control blocks #&gt; 문장을 포함할 수 있습니다.
+&lt;#= Expression control blocks # &gt;표현식을 포함할 수 있습니다.
+&lt;#+ Class feature control blocks #&gt;메서드, 필드, 속성을 포함할 수 있습니다.</p>
+<p>https://marketplace.visualstudio.com/items?itemName=bricelam.T4Language
+https://github.com/bricelam/T4Language</p>
+<p>https://marketplace.visualstudio.com/items?itemName=bricelam.VSDataSqlite
+https://github.com/bricelam/VS.Data.Sqlite</p>
+<p>&lt;#@ template debug="false" hostspecific="false" language="C#" #&gt;
+&lt;#@ output extension=".cs" #&gt;</p>
+<p>hostspecific="true": 템플릿에서 호스트 애플리케이션의 환경 정보, 파일 경로 등 호스트와 관련된 정보를 사용할 수 있습니다.
+// ex) 템플릿이 실행되는 디렉터리 경로를 가져옴</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../dotnet/t4-template.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../dotnet/thread-task.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../library/tool.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../etc/version.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -201,11 +275,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../dotnet/t4-template.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../dotnet/thread-task.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../library/tool.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../etc/version.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
