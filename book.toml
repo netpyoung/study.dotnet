@@ -1,7 +1,7 @@
 [book]
 title = "study.dotnet"
 description = "study.dotnet"
-language = "kr"
+language = "ko"
 multilingual = false
 src = "src"
 
