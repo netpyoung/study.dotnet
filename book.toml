@@ -2,7 +2,6 @@
 title = "study.dotnet"
 description = "study.dotnet"
 language = "ko"
-multilingual = false
 src = "src"
 
 [output.html]
