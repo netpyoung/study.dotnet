@@ -46,6 +46,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -102,10 +103,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -159,7 +163,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -785,6 +794,58 @@ https://github.com/bricelam/VS.Data.Sqlite</p>
 &lt;#@ output extension=".cs" #&gt;</p>
 <p>hostspecific="true": 템플릿에서 호스트 애플리케이션의 환경 정보, 파일 경로 등 호스트와 관련된 정보를 사용할 수 있습니다.
 // ex) 템플릿이 실행되는 디렉터리 경로를 가져옴</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="platform-invoke-pinvoke"><a class="header" href="#platform-invoke-pinvoke">Platform Invoke (P/Invoke)</a></h1>
+<p>https://openjdk.org/projects/panama/
+https://github.com/microsoft/ClangSharp
+https://github.com/mono/CppSharp</p>
+<ul>
+<li>DllImport나 SetDllImportResolver를 통해 로드된 네이티브 라이브러리는 .NET 런타임(또는 Unity의 IL2CPP 런타임) 이 수명(lifetime)을 관리합니다. 해당 Assembly가 unload되거나 앱 종료 시 자동 해제됩니다.</li>
+</ul>
+<p>https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary.setdllimportresolver?view=net-9.0
+https://learn.microsoft.com/en-us/dotnet/standard/native-interop/native-library-loading</p>
+<ul>
+<li>bass.net with MAUI iOS cannot load native bass library
+<ul>
+<li>https://www.un4seen.com/forum/?topic=19928.0</li>
+</ul>
+</li>
+</ul>
+<p>https://learn.microsoft.com/ko-kr/dotnet/api/system.runtime.interopservices.dllimportattribute
+https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.libraryimportattribute</p>
+<p>https://github.com/netpyoung/SqlCipher4Unity3D/tree/master
+https://github.com/netpyoung/unity.webp
+https://github.com/netpyoung/unity.libsodium</p>
+<p>https://github.com/netpyoung/prebuilt-libsqlcipher/blob/main/NOTE.md
+https://github.com/netpyoung/prebuilt-libwebp/blob/main/NOTE.md</p>
+<p>https://github.com/netpyoung/prebuilt-libsodium
+https://github.com/netpyoung/prebuilt-libwebp
+https://github.com/netpyoung/prebuilt-libsqlcipher</p>
+<h2 id="dllimporthello"><a class="header" href="#dllimporthello">[DllImport("hello")]</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>플랫폼</th><th>런타임이 찾는 실제 파일</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>Windows</strong></td><td><code>hello.dll</code></td><td></td></tr>
+<tr><td><strong>Linux</strong></td><td><code>libhello.so</code></td><td></td></tr>
+<tr><td><strong>macOS</strong></td><td><code>libhello.dylib</code></td><td></td></tr>
+<tr><td>**iOS **</td><td>불가</td><td>빌드 시 정적 링크 필요 <code>__Internal</code></td></tr>
+</tbody></table>
+</div>
+<h2 id="unity-한정"><a class="header" href="#unity-한정">Unity 한정</a></h2>
+<ul>
+<li>https://endoflife.date/unity</li>
+<li>C#의 정적 생성자(static ClassName())는 명시적으로 클래스가 처음 “사용될 때” 한 번만 호출됩니다.</li>
+</ul>
+<pre><code class="language-cs">[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+static void Init()
+{
+    _ = typeof(CustomResolverDemo); // 강제로 로드
+}
+
+</code></pre>
+<ul>
+<li><a href="dotnet/../tool/clangsharp.html">../tool/clangsharp.md</a></li>
+</ul>
+<p>https://learn.microsoft.com/en-us/dotnet/framework/interop/default-marshalling-for-strings
+https://github.com/dotnet/runtime/blob/main/docs/design/features/source-generator-pinvokes.md
+https://learn.microsoft.com/en-us/dotnet/standard/native-interop/type-marshalling</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="version"><a class="header" href="#version">Version</a></h1>
 <p>https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history</p>
 <ul>
@@ -897,6 +958,7 @@ $ cat .config/dotnet-tools.json
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>
