@@ -5,6 +5,12 @@ https://andrewlock.net/updates-to-the-stronglytypedid-library/
 https://github.com/praeclarum/sqlite-net/blob/master/src/SQLite.cs
 
 
+## expression tree - expression visitor
+
+https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/expression-trees-interpreting
+https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/
+https://rafalkozlowski.engineer/how-to-use-expressionvisitor-like-a-pro/
+
 - rowid
   - https://sqlite.org/withoutrowid.html
   - 정수가 아닌 PRIMARY KEY가 있는 테이블에 ROWID 없이 
