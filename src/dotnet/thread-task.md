@@ -37,7 +37,7 @@ TaskCreationOptions.DenyChildAttach TaskScheduler.Default
   - <https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/>
 - Unwrap()의 목적:
   - [How to: Unwrap a Nested Task](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/how-to-unwrap-a-nested-task)
-  - Task<Task<T>>를 Task<T>로 변환함.
+  - `Task<Task<T>>를 Task<T>로 변환함.`
   - 중첩된 Task 구조를 단일 Task로 평탄화함
 
 ## TaskScheduler
@@ -403,7 +403,7 @@ private async Task<string> FetchDataFromDatabaseAsync(int id)
 ```
 
 - Task는 Class.
-  - Task<int>같은경우 경우의 수가 많기에, 보다 적은수의 캐싱을 유지
+  - `Task<int>`같은경우 경우의 수가 많기에, 보다 적은수의 캐싱을 유지
   - 완료될 때까지 대기할 수 있으며, 실행이 완료되면 IsCompleted, Result, GetAwaiter().GetResult()와 같은 API가 작업을 완료 상태로 유지.
   - 여러 스레드에서 안전하게 접근할 수 있도록 설계됨.
 - ValueTask는 Struct
@@ -413,7 +413,7 @@ private async Task<string> FetchDataFromDatabaseAsync(int id)
     - 이로 인해 ValueTask는 여러 스레드에서 동시에 접근하거나 두 번 이상 await하는 경우 문제가 발생할 수 있다.
 
 
-| 상황                               | Task / Task<TResult>                                                                                    | ValueTask / ValueTask<TResult>                                                                                                                                                  |
+| 상황                               | Task / Task\<TResult>                                                                                    | ValueTask / ValueTask\<TResult>                                                                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 여러 번 `await`할 때               | 완료된 후에도 다시 불완료 상태로 전환되지 않으므로 여러 번 `await`해도 항상 동일한 결과를 얻을 수 있음. | 객체가 이미 다른 작업에서 재사용되고 있을 수 있어, 여러 번 `await`할 경우 문제가 발생할 수 있음.                                                                                |
 | 동시에 `await`할 때                | 안정적으로 사용할 수 있음.                                                                              | 하나의 콜백만을 하나의 소비자와 함께 사용하도록 설계되었으므로, 동시 `await` 시 경쟁 상태와 같은 오류가 발생할 수 있음.                                                         |
@@ -429,7 +429,7 @@ private async Task<string> FetchDataFromDatabaseAsync(int id)
 
 ## Parallel
 
-- Task<ParallelLoopResult> task = Task.Run(() => Parallel.ForEach(
+- `Task<ParallelLoopResult> task = Task.Run(() => Parallel.ForEach(`
 - await Parallel.ForEachAsync
   - System.Threading.Tasks.Parallel.dll
 

@@ -11,6 +11,8 @@ EnableCompressionInSingleFile - managed 코드 압축 📉 - SelfContained 일 �
 PublishTrimmed - DLL속 프로그램에서 사용 중인 것만 포함 📉
 DebugType - embedded -  pdb 실행파일에 포함 📈
 
+
+PublishSingleFile - PublishAot랑 같이 못씀
 PublishAot - 런타임 내장 (IL을 완전히 네이티브 코드로 바꿈) 📈
 PublishReadyToRun - 런타임 필요 (IL을 일부만 네이티브 코드로 바꿈) - 파일사이즈 커짐📈
 
